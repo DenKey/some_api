@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  brand: one
+  category: one
+  beginning_date: 2021-09-04
+  expiration_date: 2021-09-04
+  available: false
+
+two:
+  name: MyString
+  description: MyText
+  brand: two
+  category: two
+  beginning_date: 2021-09-04
+  expiration_date: 2021-09-04
+  available: false
