@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  api:
+    errors:
+      generic: "There seems to be a problem. Please try again in a little while."
+      record_not_found: "Requested record not found"
+      parameters_error: "Something wrong with data that we get from you. Please try again."

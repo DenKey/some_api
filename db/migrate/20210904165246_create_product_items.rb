@@ -7,6 +7,7 @@ class CreateProductItems < ActiveRecord::Migration[6.1]
       t.string :size
       t.string :color
       t.boolean :available
+      t.integer :quantity
       t.references :product, null: false, foreign_key: true
 
       t.timestamps

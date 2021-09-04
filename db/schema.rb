@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 2021_09_04_171154) do
     t.index ["parent_category_id"], name: "index_categories_on_parent_category_id"
   end
 
-  create_table "product_categories", id: false, force: :cascade do |t|
+  create_table "categories_products", id: false, force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_product_categories_on_category_id"
-    t.index ["product_id"], name: "index_product_categories_on_product_id"
+    t.index ["category_id"], name: "index_categories_products_on_category_id"
+    t.index ["product_id"], name: "index_categories_products_on_product_id"
   end
 
   create_table "product_items", force: :cascade do |t|
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_171154) do
     t.string "size"
     t.string "color"
     t.boolean "available"
+    t.integer "quantity"
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
