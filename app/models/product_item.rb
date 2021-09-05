@@ -9,4 +9,6 @@ class ProductItem < ApplicationRecord
                                 message: "%{value} is not a valid size" }
   validates :color, inclusion: { in: %w(blue green white),
                                  message: "%{value} is not a valid color" }
+
+  validates_uniqueness_of :size, scope: :color
 end

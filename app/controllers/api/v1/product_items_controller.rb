@@ -1,5 +1,7 @@
 class Api::V1::ProductItemsController < Api::V1::BaseController
+  include Api::V1::ProductItemsHelper
   before_action :find_product_item, only: [:destroy, :update, :show]
+  before_action :check_product, only: [:create, :update]
 
   def index
     @product_items = ProductItem.all
@@ -8,6 +10,9 @@ class Api::V1::ProductItemsController < Api::V1::BaseController
   end
 
   def create
+    @product_item = ProductItem.create!(product_item_params)
+
+    render 'api/v1/product_items/show.json.jbuilder'
   end
 
   def destroy
@@ -17,15 +22,12 @@ class Api::V1::ProductItemsController < Api::V1::BaseController
   end
 
   def update
+    @product_item.update!(product_item_params)
+
+    render 'api/v1/product_items/show.json.jbuilder'
   end
 
   def show
     render'api/v1/product_items/show.json.jbuilder'
-  end
-
-  private
-
-  def find_product_item
-    @product_item = ProductItem.find(params[:id])
   end
 end

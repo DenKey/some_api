@@ -6,6 +6,7 @@ class ApiVersionConstraint
   end
 
   def matches?(request)
-    request.headers.fetch(:api).include?(version)
+    api = request.headers[:api]
+    true if api.present? and api.include?(version)
   end
 end

@@ -1,10 +1,6 @@
 class Api::V1::BaseController < ApplicationController
   around_action :run_action
 
-  STATUS_PARAMETER_ERROR = 400
-  STATUS_MISSING_RESOURCE_ERROR = 404
-  STATUS_SERVER_ERROR = 500
-
   private
 
   def error(message, status, errors = nil)
@@ -23,12 +19,16 @@ class Api::V1::BaseController < ApplicationController
     rescue => e
       case e
       when ActiveRecord::RecordNotFound
-        error(I18n.t('api.errors.record_not_found'), STATUS_MISSING_RESOURCE_ERROR)
-      when ActiveRecord::RecordInvalid
-        error(I18n.t('api.errors.parameters_error'), STATUS_PARAMETER_ERROR, e.to_s)
+        error(I18n.t('api.errors.record_not_found'), STATUS_MISSING_RESOURCE_ERROR, e)
+      when ActiveRecord::RecordInvalid, ActionController::ParameterMissing
+        error(I18n.t('api.errors.parameters_error'), STATUS_PARAMETER_ERROR, e)
       else
         error(I18n.t('api.errors.generic'), STATUS_SERVER_ERROR)
       end
+    ensure
+      # Development version of logging. We can use any specified services here
+      Rails.logger.info(e)
+      Rails.logger.info(e.class)
     end
   end
 end

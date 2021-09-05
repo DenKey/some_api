@@ -6,4 +6,14 @@ class Category < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :code, presence: true, uniqueness: true
+
+  validate :category_cant_be_as_parent_to_itself
+
+  private
+
+  def category_cant_be_as_parent_to_itself
+    if parent_category_id.present? && parent_category_id == id
+      errors.add(:parent_category_id, "can't be as parent category to itself")
+    end
+  end
 end

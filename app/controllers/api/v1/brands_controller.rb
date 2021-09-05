@@ -1,4 +1,5 @@
 class Api::V1::BrandsController < Api::V1::BaseController
+  include Api::V1::BrandHelper
   before_action :find_brand, only: [:show, :update, :destroy]
 
   def index
@@ -8,6 +9,9 @@ class Api::V1::BrandsController < Api::V1::BaseController
   end
 
   def create
+    @brand = Brand.create!(brand_params)
+
+    render'api/v1/brands/show.json.jbuilder'
   end
 
   def destroy
@@ -17,15 +21,12 @@ class Api::V1::BrandsController < Api::V1::BaseController
   end
 
   def update
+    @brand.update!(brand_params)
+
+    render'api/v1/brands/show.json.jbuilder'
   end
 
   def show
     render'api/v1/brands/show.json.jbuilder'
-  end
-
-  private
-
-  def find_brand
-    @brand = Brand.find(params[:id])
   end
 end

@@ -36,5 +36,7 @@ Rails.application.routes.draw do
       put 'categories/:id' => 'categories#update'
       delete 'categories/:id' => 'categories#destroy'
     end
+
+    match '*path', to: 'unmatch#not_found', via: :all
   end
 end

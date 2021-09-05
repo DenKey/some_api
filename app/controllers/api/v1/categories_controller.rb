@@ -1,5 +1,7 @@
 class Api::V1::CategoriesController < Api::V1::BaseController
+  include Api::V1::CategoriesHelper
   before_action :find_category, only: [:destroy, :update, :show]
+  before_action :check_parent_category, only: [:create, :update]
 
   def index
     @categories = Category.all
@@ -8,6 +10,9 @@ class Api::V1::CategoriesController < Api::V1::BaseController
   end
 
   def create
+    @category = Category.create!(category_params)
+
+    render'api/v1/categories/show.json.jbuilder'
   end
 
   def destroy
@@ -17,15 +22,12 @@ class Api::V1::CategoriesController < Api::V1::BaseController
   end
 
   def update
+    @category.update!(category_params)
+
+    render'api/v1/categories/show.json.jbuilder'
   end
 
   def show
     render'api/v1/categories/show.json.jbuilder'
-  end
-
-  private
-
-  def find_category
-    @category = Category.find(params[:id])
   end
 end
