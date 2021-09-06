@@ -4,7 +4,7 @@ module Api
   module V1
     class BaseController < ApplicationController
       around_action :run_action
-      skip_before_action :authorized, only: [:index, :show]
+      skip_before_action :authorized, only: %i[index show]
 
       private
 

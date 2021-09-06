@@ -5,6 +5,7 @@ AllCops:
     - "doc/snippets.rb"
     - "node_modules/**/*"
     - "db/schema.rb"
+    - "db/seeds.rb"
   ExtraDetails: true
   TargetRubyVersion: 2.7
   NewCops: disable
