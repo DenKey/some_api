@@ -4,17 +4,17 @@ module Api
   module V1
     class BaseController < ApplicationController
       around_action :run_action
+      skip_before_action :authorized, only: [:index, :show]
 
       private
 
       def error(message, status, errors = nil)
         @error = OpenStruct.new(
-          status: status,
           message: message,
           errors: errors
         )
 
-        render 'api/v1/base/error.json.jbuilder'
+        render 'api/v1/base/error.json.jbuilder', status: status
       end
 
       def run_action
@@ -31,7 +31,6 @@ module Api
       ensure
         # Development version of logging. We can use any specified services here
         Rails.logger.info(e)
-        Rails.logger.info(e.class)
       end
     end
   end

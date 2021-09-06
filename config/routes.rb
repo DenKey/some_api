@@ -37,6 +37,9 @@ Rails.application.routes.draw do
       post 'categories' => 'categories#create'
       put 'categories/:id' => 'categories#update'
       delete 'categories/:id' => 'categories#destroy'
+
+      post "/login", to: "users#login"
+      get "/profile", to: "users#profile"
     end
 
     match '*path', to: 'unmatch#not_found', via: :all

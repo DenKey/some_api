@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Task
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+At Decathlon, we sell products in different sizes (S-M-L) and colors (Blue - Green - White) 
+for multiple in-house sport's brands (one brand per sport: Kipsta for football, 
+Quechua for hiking, Artengo for tennis, etc). Every products are available for a certain 
+duration, some for a season and some for several years. The availability period can be discontinued.
+Based on this context, we would like you to write a Backend API with CRUD endpoints.

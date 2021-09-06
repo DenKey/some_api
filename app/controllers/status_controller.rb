@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class StatusController < ApplicationController
+  skip_before_action :authorized, only: [:static, :production, :staging, :development]
+
   # This action provide info about ability of our server
   def static
     render json: 'ok'
