@@ -1,0 +1,5304 @@
+{
+  "docs": {
+    "name": "SomeApi",
+    "info": "\n<p>Each request must contains header key &#39;api&#39; with value &#39;v1&#39;.</p>\n\n<p>For authorization header key &#39;Authorzation&#39; must contains &#39;Bearer: USER_TOKEN&#39;.</p>\n",
+    "copyright": "&copy; 2021 Denys Kriukov",
+    "doc_url": "/apipie/1.0",
+    "api_url": "/api",
+    "resources": {
+      "categories": {
+        "doc_url": "/apipie/1.0/categories",
+        "id": "categories",
+        "api_url": "/api",
+        "name": "Categories",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "/apipie/1.0/categories/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/api/categories",
+                "http_method": "GET",
+                "short_description": "Get categories list",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_products",
+                "full_name": "is_include_products",
+                "description": "\n<p>Show all products related to category</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "is_include_subcategories",
+                "full_name": "is_include_subcategories",
+                "description": "\n<p>Show all subcategories related to category</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Category id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Category name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Category description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "code",
+                    "description": "\n<p>Category code</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "parent_category_id",
+                    "full_name": "parent_category_id",
+                    "description": "\n<p>Parent category</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "products",
+                    "full_name": "products",
+                    "description": "\n<p>Array of products if is_include_products is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "id",
+                        "full_name": "products[id]",
+                        "description": "\n<p>Product id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "name",
+                        "full_name": "products[name]",
+                        "description": "\n<p>Product name</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "description",
+                        "full_name": "products[description]",
+                        "description": "\n<p>Product description</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "brand_id",
+                        "full_name": "products[brand_id]",
+                        "description": "\n<p>Brand id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "beginning_date",
+                        "full_name": "products[beginning_date]",
+                        "description": "\n<p>Date when product starts on market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "expiration_date",
+                        "full_name": "products[expiration_date]",
+                        "description": "\n<p>Date when product leave a market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "available",
+                        "full_name": "products[available]",
+                        "description": "\n<p>Product availability</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "category_ids",
+                        "full_name": "products[category_ids]",
+                        "description": "\n<p>Product categories</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be an array of any type",
+                        "expected_type": "array",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "created_at",
+                        "full_name": "products[created_at]",
+                        "description": "\n<p>Created_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "updated_at",
+                        "full_name": "products[updated_at]",
+                        "description": "\n<p>Updated_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "subcategories",
+                    "full_name": "subcategories",
+                    "description": "\n<p>Array of categories if is_include_subcategories is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/categories/show",
+            "name": "show",
+            "apis": [
+              {
+                "api_url": "/api/categories/:id",
+                "http_method": "GET",
+                "short_description": "Get category",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_products",
+                "full_name": "is_include_products",
+                "description": "\n<p>Show all products related to category</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "is_include_subcategories",
+                "full_name": "is_include_subcategories",
+                "description": "\n<p>Show all subcategories related to category</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Category id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Category name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Category description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "code",
+                    "description": "\n<p>Category code</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "parent_category_id",
+                    "full_name": "parent_category_id",
+                    "description": "\n<p>Parent category</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "products",
+                    "full_name": "products",
+                    "description": "\n<p>Array of products if is_include_products is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "id",
+                        "full_name": "products[id]",
+                        "description": "\n<p>Product id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "name",
+                        "full_name": "products[name]",
+                        "description": "\n<p>Product name</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "description",
+                        "full_name": "products[description]",
+                        "description": "\n<p>Product description</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "brand_id",
+                        "full_name": "products[brand_id]",
+                        "description": "\n<p>Brand id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "beginning_date",
+                        "full_name": "products[beginning_date]",
+                        "description": "\n<p>Date when product starts on market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "expiration_date",
+                        "full_name": "products[expiration_date]",
+                        "description": "\n<p>Date when product leave a market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "available",
+                        "full_name": "products[available]",
+                        "description": "\n<p>Product availability</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "category_ids",
+                        "full_name": "products[category_ids]",
+                        "description": "\n<p>Product categories</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be an array of any type",
+                        "expected_type": "array",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "created_at",
+                        "full_name": "products[created_at]",
+                        "description": "\n<p>Created_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "updated_at",
+                        "full_name": "products[updated_at]",
+                        "description": "\n<p>Updated_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "subcategories",
+                    "full_name": "subcategories",
+                    "description": "\n<p>Array of categories if is_include_subcategories is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/categories/destroy",
+            "name": "destroy",
+            "apis": [
+              {
+                "api_url": "/api/categories/:id",
+                "http_method": "DELETE",
+                "short_description": "Delete category",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/categories/create",
+            "name": "create",
+            "apis": [
+              {
+                "api_url": "/api/categories",
+                "http_method": "POST",
+                "short_description": "Create a new category",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_products",
+                "full_name": "is_include_products",
+                "description": "\n<p>Show all products related to category</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "is_include_subcategories",
+                "full_name": "is_include_subcategories",
+                "description": "\n<p>Show all subcategories related to category</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "category",
+                "full_name": "category",
+                "description": "\n<p>category data</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ],
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "category[name]",
+                    "description": "\n<p>category name</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "category[description]",
+                    "description": "\n<p>category description</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "category[code]",
+                    "description": "\n<p>category code</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  }
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Category id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Category name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Category description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "code",
+                    "description": "\n<p>Category code</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "parent_category_id",
+                    "full_name": "parent_category_id",
+                    "description": "\n<p>Parent category</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "products",
+                    "full_name": "products",
+                    "description": "\n<p>Array of products if is_include_products is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "id",
+                        "full_name": "products[id]",
+                        "description": "\n<p>Product id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "name",
+                        "full_name": "products[name]",
+                        "description": "\n<p>Product name</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "description",
+                        "full_name": "products[description]",
+                        "description": "\n<p>Product description</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "brand_id",
+                        "full_name": "products[brand_id]",
+                        "description": "\n<p>Brand id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "beginning_date",
+                        "full_name": "products[beginning_date]",
+                        "description": "\n<p>Date when product starts on market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "expiration_date",
+                        "full_name": "products[expiration_date]",
+                        "description": "\n<p>Date when product leave a market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "available",
+                        "full_name": "products[available]",
+                        "description": "\n<p>Product availability</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "category_ids",
+                        "full_name": "products[category_ids]",
+                        "description": "\n<p>Product categories</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be an array of any type",
+                        "expected_type": "array",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "created_at",
+                        "full_name": "products[created_at]",
+                        "description": "\n<p>Created_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "updated_at",
+                        "full_name": "products[updated_at]",
+                        "description": "\n<p>Updated_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "subcategories",
+                    "full_name": "subcategories",
+                    "description": "\n<p>Array of categories if is_include_subcategories is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/categories/update",
+            "name": "update",
+            "apis": [
+              {
+                "api_url": "/api/categories/:id",
+                "http_method": "PUT",
+                "short_description": "Update a category",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_products",
+                "full_name": "is_include_products",
+                "description": "\n<p>Show all products related to category</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "is_include_subcategories",
+                "full_name": "is_include_subcategories",
+                "description": "\n<p>Show all subcategories related to category</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "category",
+                "full_name": "category",
+                "description": "\n<p>category data</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ],
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "category[name]",
+                    "description": "\n<p>category name</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "category[description]",
+                    "description": "\n<p>category description</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "category[code]",
+                    "description": "\n<p>category code</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  }
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Category id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Category name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Category description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "code",
+                    "description": "\n<p>Category code</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "parent_category_id",
+                    "full_name": "parent_category_id",
+                    "description": "\n<p>Parent category</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "products",
+                    "full_name": "products",
+                    "description": "\n<p>Array of products if is_include_products is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "id",
+                        "full_name": "products[id]",
+                        "description": "\n<p>Product id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "name",
+                        "full_name": "products[name]",
+                        "description": "\n<p>Product name</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "description",
+                        "full_name": "products[description]",
+                        "description": "\n<p>Product description</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "brand_id",
+                        "full_name": "products[brand_id]",
+                        "description": "\n<p>Brand id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "beginning_date",
+                        "full_name": "products[beginning_date]",
+                        "description": "\n<p>Date when product starts on market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "expiration_date",
+                        "full_name": "products[expiration_date]",
+                        "description": "\n<p>Date when product leave a market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "available",
+                        "full_name": "products[available]",
+                        "description": "\n<p>Product availability</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "category_ids",
+                        "full_name": "products[category_ids]",
+                        "description": "\n<p>Product categories</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be an array of any type",
+                        "expected_type": "array",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "created_at",
+                        "full_name": "products[created_at]",
+                        "description": "\n<p>Created_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "updated_at",
+                        "full_name": "products[updated_at]",
+                        "description": "\n<p>Updated_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "subcategories",
+                    "full_name": "subcategories",
+                    "description": "\n<p>Array of categories if is_include_subcategories is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          }
+        ],
+        "headers": null,
+        "deprecated": null
+      },
+      "brands": {
+        "doc_url": "/apipie/1.0/brands",
+        "id": "brands",
+        "api_url": "/api",
+        "name": "Brands",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "/apipie/1.0/brands/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/api/brands",
+                "http_method": "GET",
+                "short_description": "Get brands list",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_products",
+                "full_name": "is_include_products",
+                "description": "\n<p>Show all products related to brand</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Brand name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Brand description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "code",
+                    "description": "\n<p>Brand code</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "products",
+                    "full_name": "products",
+                    "description": "\n<p>Array of products if is_include_products is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "id",
+                        "full_name": "products[id]",
+                        "description": "\n<p>Product id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "name",
+                        "full_name": "products[name]",
+                        "description": "\n<p>Product name</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "description",
+                        "full_name": "products[description]",
+                        "description": "\n<p>Product description</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "brand_id",
+                        "full_name": "products[brand_id]",
+                        "description": "\n<p>Brand id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "beginning_date",
+                        "full_name": "products[beginning_date]",
+                        "description": "\n<p>Date when product starts on market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "expiration_date",
+                        "full_name": "products[expiration_date]",
+                        "description": "\n<p>Date when product leave a market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "available",
+                        "full_name": "products[available]",
+                        "description": "\n<p>Product availability</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "category_ids",
+                        "full_name": "products[category_ids]",
+                        "description": "\n<p>Product categories</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be an array of any type",
+                        "expected_type": "array",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "created_at",
+                        "full_name": "products[created_at]",
+                        "description": "\n<p>Created_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "updated_at",
+                        "full_name": "products[updated_at]",
+                        "description": "\n<p>Updated_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/brands/show",
+            "name": "show",
+            "apis": [
+              {
+                "api_url": "/api/brands/:id",
+                "http_method": "GET",
+                "short_description": "Get brand",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_products",
+                "full_name": "is_include_products",
+                "description": "\n<p>Show all products related to brand</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Brand name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Brand description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "code",
+                    "description": "\n<p>Brand code</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "products",
+                    "full_name": "products",
+                    "description": "\n<p>Array of products if is_include_products is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "id",
+                        "full_name": "products[id]",
+                        "description": "\n<p>Product id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "name",
+                        "full_name": "products[name]",
+                        "description": "\n<p>Product name</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "description",
+                        "full_name": "products[description]",
+                        "description": "\n<p>Product description</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "brand_id",
+                        "full_name": "products[brand_id]",
+                        "description": "\n<p>Brand id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "beginning_date",
+                        "full_name": "products[beginning_date]",
+                        "description": "\n<p>Date when product starts on market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "expiration_date",
+                        "full_name": "products[expiration_date]",
+                        "description": "\n<p>Date when product leave a market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "available",
+                        "full_name": "products[available]",
+                        "description": "\n<p>Product availability</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "category_ids",
+                        "full_name": "products[category_ids]",
+                        "description": "\n<p>Product categories</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be an array of any type",
+                        "expected_type": "array",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "created_at",
+                        "full_name": "products[created_at]",
+                        "description": "\n<p>Created_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "updated_at",
+                        "full_name": "products[updated_at]",
+                        "description": "\n<p>Updated_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/brands/destroy",
+            "name": "destroy",
+            "apis": [
+              {
+                "api_url": "/api/brands/:id",
+                "http_method": "DELETE",
+                "short_description": "Delete brand",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/brands/create",
+            "name": "create",
+            "apis": [
+              {
+                "api_url": "/api/brands",
+                "http_method": "POST",
+                "short_description": "Create a new brand",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_products",
+                "full_name": "is_include_products",
+                "description": "\n<p>Show all products related to brand</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "brand",
+                "full_name": "brand",
+                "description": "\n<p>Brand data</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ],
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "brand[name]",
+                    "description": "\n<p>Brand name</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "brand[description]",
+                    "description": "\n<p>Brand description</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "brand[code]",
+                    "description": "\n<p>Brand code</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  }
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Brand name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Brand description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "code",
+                    "description": "\n<p>Brand code</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "products",
+                    "full_name": "products",
+                    "description": "\n<p>Array of products if is_include_products is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "id",
+                        "full_name": "products[id]",
+                        "description": "\n<p>Product id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "name",
+                        "full_name": "products[name]",
+                        "description": "\n<p>Product name</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "description",
+                        "full_name": "products[description]",
+                        "description": "\n<p>Product description</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "brand_id",
+                        "full_name": "products[brand_id]",
+                        "description": "\n<p>Brand id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "beginning_date",
+                        "full_name": "products[beginning_date]",
+                        "description": "\n<p>Date when product starts on market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "expiration_date",
+                        "full_name": "products[expiration_date]",
+                        "description": "\n<p>Date when product leave a market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "available",
+                        "full_name": "products[available]",
+                        "description": "\n<p>Product availability</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "category_ids",
+                        "full_name": "products[category_ids]",
+                        "description": "\n<p>Product categories</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be an array of any type",
+                        "expected_type": "array",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "created_at",
+                        "full_name": "products[created_at]",
+                        "description": "\n<p>Created_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "updated_at",
+                        "full_name": "products[updated_at]",
+                        "description": "\n<p>Updated_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/brands/update",
+            "name": "update",
+            "apis": [
+              {
+                "api_url": "/api/brands/:id",
+                "http_method": "PUT",
+                "short_description": "Update a brand",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_products",
+                "full_name": "is_include_products",
+                "description": "\n<p>Show all products related to brand</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "brand",
+                "full_name": "brand",
+                "description": "\n<p>Brand data</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ],
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "brand[name]",
+                    "description": "\n<p>Brand name</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "brand[description]",
+                    "description": "\n<p>Brand description</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "brand[code]",
+                    "description": "\n<p>Brand code</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  }
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Brand name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Brand description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "code",
+                    "full_name": "code",
+                    "description": "\n<p>Brand code</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "products",
+                    "full_name": "products",
+                    "description": "\n<p>Array of products if is_include_products is true</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an Array of nested elements",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "params": [
+                      {
+                        "name": "id",
+                        "full_name": "products[id]",
+                        "description": "\n<p>Product id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "name",
+                        "full_name": "products[name]",
+                        "description": "\n<p>Product name</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "description",
+                        "full_name": "products[description]",
+                        "description": "\n<p>Product description</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "brand_id",
+                        "full_name": "products[brand_id]",
+                        "description": "\n<p>Brand id</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "beginning_date",
+                        "full_name": "products[beginning_date]",
+                        "description": "\n<p>Date when product starts on market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "expiration_date",
+                        "full_name": "products[expiration_date]",
+                        "description": "\n<p>Date when product leave a market</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "available",
+                        "full_name": "products[available]",
+                        "description": "\n<p>Product availability</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "category_ids",
+                        "full_name": "products[category_ids]",
+                        "description": "\n<p>Product categories</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be an array of any type",
+                        "expected_type": "array",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "created_at",
+                        "full_name": "products[created_at]",
+                        "description": "\n<p>Created_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      },
+                      {
+                        "name": "updated_at",
+                        "full_name": "products[updated_at]",
+                        "description": "\n<p>Updated_at timestamp</p>\n",
+                        "required": true,
+                        "allow_nil": false,
+                        "allow_blank": false,
+                        "validator": "Must be a String",
+                        "expected_type": "string",
+                        "metadata": null,
+                        "show": true,
+                        "validations": [
+
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          }
+        ],
+        "headers": null,
+        "deprecated": null
+      },
+      "products": {
+        "doc_url": "/apipie/1.0/products",
+        "id": "products",
+        "api_url": "/api",
+        "name": "Products",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "/apipie/1.0/products/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/api/products",
+                "http_method": "GET",
+                "short_description": "Get products list",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_items",
+                "full_name": "is_include_items",
+                "description": "\n<p>Show all product_items related to product</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Product name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Product description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "brand_id",
+                    "full_name": "brand_id",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "beginning_date",
+                    "full_name": "beginning_date",
+                    "description": "\n<p>Date when product starts on market</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "expiration_date",
+                    "full_name": "expiration_date",
+                    "description": "\n<p>Date when product leave a market</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "available",
+                    "description": "\n<p>Product availability</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "category_ids",
+                    "full_name": "category_ids",
+                    "description": "\n<p>Product categories</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/products/show",
+            "name": "show",
+            "apis": [
+              {
+                "api_url": "/api/products/:id",
+                "http_method": "GET",
+                "short_description": "Get product",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_items",
+                "full_name": "is_include_items",
+                "description": "\n<p>Show all product_items related to product</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Product name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Product description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "brand_id",
+                    "full_name": "brand_id",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "beginning_date",
+                    "full_name": "beginning_date",
+                    "description": "\n<p>Date when product starts on market</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "expiration_date",
+                    "full_name": "expiration_date",
+                    "description": "\n<p>Date when product leave a market</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "available",
+                    "description": "\n<p>Product availability</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "category_ids",
+                    "full_name": "category_ids",
+                    "description": "\n<p>Product categories</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/products/destroy",
+            "name": "destroy",
+            "apis": [
+              {
+                "api_url": "/api/products/:id",
+                "http_method": "DELETE",
+                "short_description": "Delete product",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/products/create",
+            "name": "create",
+            "apis": [
+              {
+                "api_url": "/api/products",
+                "http_method": "POST",
+                "short_description": "Create a new product",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_items",
+                "full_name": "is_include_items",
+                "description": "\n<p>Show all product_items related to product</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "product",
+                "full_name": "product",
+                "description": "\n<p>product data</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ],
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "product[name]",
+                    "description": "\n<p>product name</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "product[description]",
+                    "description": "\n<p>product description</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "brand_id",
+                    "full_name": "product[brand_id]",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "expiration_date",
+                    "full_name": "product[expiration_date]",
+                    "description": "\n<p>Date when product leave a market</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "beginning_date",
+                    "full_name": "product[beginning_date]",
+                    "description": "\n<p>Date when product starts on market</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "product[available]",
+                    "description": "\n<p>Product availability</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "category_ids",
+                    "full_name": "product[category_ids]",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  }
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Product name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Product description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "brand_id",
+                    "full_name": "brand_id",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "beginning_date",
+                    "full_name": "beginning_date",
+                    "description": "\n<p>Date when product starts on market</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "expiration_date",
+                    "full_name": "expiration_date",
+                    "description": "\n<p>Date when product leave a market</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "available",
+                    "description": "\n<p>Product availability</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "category_ids",
+                    "full_name": "category_ids",
+                    "description": "\n<p>Product categories</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/products/update",
+            "name": "update",
+            "apis": [
+              {
+                "api_url": "/api/products/:id",
+                "http_method": "PUT",
+                "short_description": "Update a product",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "is_include_items",
+                "full_name": "is_include_items",
+                "description": "\n<p>Show all product_items related to product</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "product",
+                "full_name": "product",
+                "description": "\n<p>product data</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ],
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "product[name]",
+                    "description": "\n<p>product name</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "product[description]",
+                    "description": "\n<p>product description</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "brand_id",
+                    "full_name": "product[brand_id]",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "expiration_date",
+                    "full_name": "product[expiration_date]",
+                    "description": "\n<p>Date when product leave a market</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "beginning_date",
+                    "full_name": "product[beginning_date]",
+                    "description": "\n<p>Date when product starts on market</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "product[available]",
+                    "description": "\n<p>Product availability</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "category_ids",
+                    "full_name": "product[category_ids]",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  }
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Product name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Product description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "brand_id",
+                    "full_name": "brand_id",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "beginning_date",
+                    "full_name": "beginning_date",
+                    "description": "\n<p>Date when product starts on market</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "expiration_date",
+                    "full_name": "expiration_date",
+                    "description": "\n<p>Date when product leave a market</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "available",
+                    "description": "\n<p>Product availability</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "category_ids",
+                    "full_name": "category_ids",
+                    "description": "\n<p>Product categories</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          }
+        ],
+        "headers": null,
+        "deprecated": null
+      },
+      "users": {
+        "doc_url": "/apipie/1.0/users",
+        "id": "users",
+        "api_url": "/api",
+        "name": "Users",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "/apipie/1.0/users/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/api/profile",
+                "http_method": "GET",
+                "short_description": "Get user profile",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>User id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "username",
+                    "full_name": "username",
+                    "description": "\n<p>Username</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/users/create",
+            "name": "create",
+            "apis": [
+              {
+                "api_url": "/api/login",
+                "http_method": "POST",
+                "short_description": "Get Bearer token",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "username",
+                "full_name": "username",
+                "description": "\n<p>User login</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              },
+              {
+                "name": "password",
+                "full_name": "password",
+                "description": "\n<p>User password</p>\n",
+                "required": false,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a String",
+                "expected_type": "string",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>User id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "username",
+                    "full_name": "username",
+                    "description": "\n<p>Username</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "token",
+                    "full_name": "token",
+                    "description": "\n<p>Auth token</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          }
+        ],
+        "headers": null,
+        "deprecated": null
+      },
+      "product_items": {
+        "doc_url": "/apipie/1.0/product_items",
+        "id": "product_items",
+        "api_url": "/api",
+        "name": "Product items",
+        "short_description": null,
+        "full_description": null,
+        "version": "1.0",
+        "formats": null,
+        "metadata": null,
+        "methods": [
+          {
+            "doc_url": "/apipie/1.0/product_items/index",
+            "name": "index",
+            "apis": [
+              {
+                "api_url": "/api/product_items",
+                "http_method": "GET",
+                "short_description": "Get product_items list",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Product Item id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Product Item  name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Product Item  description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "product_id",
+                    "full_name": "product_id",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "price",
+                    "full_name": "price",
+                    "description": "\n<p>Product Item price</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "size",
+                    "full_name": "size",
+                    "description": "\n<p>Product Item size</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "color",
+                    "full_name": "color",
+                    "description": "\n<p>Product Item color</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "available",
+                    "description": "\n<p>Product Item availability</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/product_items/show",
+            "name": "show",
+            "apis": [
+              {
+                "api_url": "/api/product_items/:id",
+                "http_method": "GET",
+                "short_description": "Get product_item",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Product Item id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Product Item  name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Product Item  description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "product_id",
+                    "full_name": "product_id",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "price",
+                    "full_name": "price",
+                    "description": "\n<p>Product Item price</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "size",
+                    "full_name": "size",
+                    "description": "\n<p>Product Item size</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "color",
+                    "full_name": "color",
+                    "description": "\n<p>Product Item color</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "available",
+                    "description": "\n<p>Product Item availability</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/product_items/destroy",
+            "name": "destroy",
+            "apis": [
+              {
+                "api_url": "/api/product_items/:id",
+                "http_method": "DELETE",
+                "short_description": "Delete product_item",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/product_items/create",
+            "name": "create",
+            "apis": [
+              {
+                "api_url": "/api/product_items",
+                "http_method": "POST",
+                "short_description": "Create a new product_item",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "product_item",
+                "full_name": "product_item",
+                "description": "\n<p>product_item data</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ],
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "product_item[name]",
+                    "description": "\n<p>product_item name</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "product_item[description]",
+                    "description": "\n<p>product_item description</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "product_id",
+                    "full_name": "product_item[product_id]",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "price",
+                    "full_name": "product_item[price]",
+                    "description": "\n<p>Product Item price</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "size",
+                    "full_name": "product_item[size]",
+                    "description": "\n<p>Product Item size</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "color",
+                    "full_name": "product_item[color]",
+                    "description": "\n<p>Product Item color</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "product_item[available]",
+                    "description": "\n<p>Product Item availability</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "category_ids",
+                    "full_name": "product_item[category_ids]",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  }
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Product Item id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Product Item  name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Product Item  description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "product_id",
+                    "full_name": "product_id",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "price",
+                    "full_name": "price",
+                    "description": "\n<p>Product Item price</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "size",
+                    "full_name": "size",
+                    "description": "\n<p>Product Item size</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "color",
+                    "full_name": "color",
+                    "description": "\n<p>Product Item color</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "available",
+                    "description": "\n<p>Product Item availability</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          },
+          {
+            "doc_url": "/apipie/1.0/product_items/update",
+            "name": "update",
+            "apis": [
+              {
+                "api_url": "/api/product_items/:id",
+                "http_method": "PUT",
+                "short_description": "Update a product_item",
+                "deprecated": null
+              }
+            ],
+            "formats": [
+              "json"
+            ],
+            "full_description": "",
+            "errors": [
+              {
+                "code": 400,
+                "description": "Parameters missing",
+                "metadata": null
+              },
+              {
+                "code": 401,
+                "description": "Please log in",
+                "metadata": null
+              },
+              {
+                "code": 404,
+                "description": "Requested record not found",
+                "metadata": null
+              }
+            ],
+            "params": [
+              {
+                "name": "product_item",
+                "full_name": "product_item",
+                "description": "\n<p>product_item data</p>\n",
+                "required": true,
+                "allow_nil": false,
+                "allow_blank": false,
+                "validator": "Must be a Hash",
+                "expected_type": "hash",
+                "metadata": null,
+                "show": true,
+                "validations": [
+
+                ],
+                "params": [
+                  {
+                    "name": "name",
+                    "full_name": "product_item[name]",
+                    "description": "\n<p>product_item name</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "product_item[description]",
+                    "description": "\n<p>product_item description</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "product_id",
+                    "full_name": "product_item[product_id]",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "price",
+                    "full_name": "product_item[price]",
+                    "description": "\n<p>Product Item price</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "size",
+                    "full_name": "product_item[size]",
+                    "description": "\n<p>Product Item size</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "color",
+                    "full_name": "product_item[color]",
+                    "description": "\n<p>Product Item color</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "product_item[available]",
+                    "description": "\n<p>Product Item availability</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  },
+                  {
+                    "name": "category_ids",
+                    "full_name": "product_item[category_ids]",
+                    "description": "\n<p>Brand id</p>\n",
+                    "required": false,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true,
+                    "validations": [
+
+                    ]
+                  }
+                ]
+              }
+            ],
+            "returns": [
+              {
+                "code": 200,
+                "description": "a successful response",
+                "is_array": false,
+                "returns_object": [
+                  {
+                    "name": "id",
+                    "full_name": "id",
+                    "description": "\n<p>Product Item id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "name",
+                    "full_name": "name",
+                    "description": "\n<p>Product Item  name</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "description",
+                    "full_name": "description",
+                    "description": "\n<p>Product Item  description</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "product_id",
+                    "full_name": "product_id",
+                    "description": "\n<p>Product id</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "price",
+                    "full_name": "price",
+                    "description": "\n<p>Product Item price</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "size",
+                    "full_name": "size",
+                    "description": "\n<p>Product Item size</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "color",
+                    "full_name": "color",
+                    "description": "\n<p>Product Item color</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be an array of any type",
+                    "expected_type": "array",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "available",
+                    "full_name": "available",
+                    "description": "\n<p>Product Item availability</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be one of: <code>true</code>, <code>false</code>.",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "created_at",
+                    "full_name": "created_at",
+                    "description": "\n<p>Created_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  },
+                  {
+                    "name": "updated_at",
+                    "full_name": "updated_at",
+                    "description": "\n<p>Updated_at timestamp</p>\n",
+                    "required": true,
+                    "allow_nil": false,
+                    "allow_blank": false,
+                    "validator": "Must be a String",
+                    "expected_type": "string",
+                    "metadata": null,
+                    "show": true
+                  }
+                ],
+                "additional_properties": false
+              }
+            ],
+            "examples": [
+
+            ],
+            "metadata": null,
+            "see": [
+
+            ],
+            "headers": [
+
+            ],
+            "show": true
+          }
+        ],
+        "headers": null,
+        "deprecated": null
+      }
+    }
+  }
+}

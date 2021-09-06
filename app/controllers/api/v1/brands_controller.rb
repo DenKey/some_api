@@ -4,6 +4,8 @@ module Api
   module V1
     class BrandsController < Api::V1::BaseController
       include Api::V1::BrandHelper
+      include Api::V1::BrandsDoc
+
       before_action :find_brand, only: %i[show update destroy]
 
       def index

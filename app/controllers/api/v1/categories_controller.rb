@@ -4,6 +4,8 @@ module Api
   module V1
     class CategoriesController < Api::V1::BaseController
       include Api::V1::CategoriesHelper
+      include Api::V1::CategoriesDoc
+
       before_action :find_category, only: %i[destroy update show]
       before_action :check_parent_category, only: %i[create update]
 

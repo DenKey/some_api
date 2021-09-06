@@ -1,5 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   include Api::V1::UsersHelper
+  include Api::V1::UsersDoc
+
   skip_before_action :authorized, only: :login
 
   EXPIRATION_TIME = Time.now.to_i + 86400

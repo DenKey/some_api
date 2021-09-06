@@ -1,0 +1,1842 @@
+  <h4><a href='#brands'>Brands</a></h4>
+  <ul>
+      <li><a href='#brands-index'>index</a></li>
+      <li><a href='#brands-show'>show</a></li>
+      <li><a href='#brands-destroy'>destroy</a></li>
+      <li><a href='#brands-create'>create</a></li>
+      <li><a href='#brands-update'>update</a></li>
+  </ul>
+  <h4><a href='#categories'>Categories</a></h4>
+  <ul>
+      <li><a href='#categories-index'>index</a></li>
+      <li><a href='#categories-show'>show</a></li>
+      <li><a href='#categories-destroy'>destroy</a></li>
+      <li><a href='#categories-create'>create</a></li>
+      <li><a href='#categories-update'>update</a></li>
+  </ul>
+  <h4><a href='#product_items'>Product items</a></h4>
+  <ul>
+      <li><a href='#product_items-index'>index</a></li>
+      <li><a href='#product_items-show'>show</a></li>
+      <li><a href='#product_items-destroy'>destroy</a></li>
+      <li><a href='#product_items-create'>create</a></li>
+      <li><a href='#product_items-update'>update</a></li>
+  </ul>
+  <h4><a href='#products'>Products</a></h4>
+  <ul>
+      <li><a href='#products-index'>index</a></li>
+      <li><a href='#products-show'>show</a></li>
+      <li><a href='#products-destroy'>destroy</a></li>
+      <li><a href='#products-create'>create</a></li>
+      <li><a href='#products-update'>update</a></li>
+  </ul>
+  <h4><a href='#users'>Users</a></h4>
+  <ul>
+      <li><a href='#users-index'>index</a></li>
+      <li><a href='#users-create'>create</a></li>
+  </ul>
+
+
+
+  <hr/>
+
+  <div>
+    <h2 id="brands">
+      <a href='#brands'>Brands</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="brands-index">
+      <a href='#brands'>Brands</a> / <a href='#brands-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/brands
+            <br>
+            <small>Get brands list</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_products </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all products related to brand</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="brands-show">
+      <a href='#brands'>Brands</a> / <a href='#brands-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/brands/:id
+            <br>
+            <small>Get brand</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_products </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all products related to brand</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="brands-destroy">
+      <a href='#brands'>Brands</a> / <a href='#brands-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/brands/:id
+            <br>
+            <small>Delete brand</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+      </div>
+      <hr/>
+
+      <h3 id="brands-create">
+      <a href='#brands'>Brands</a> / <a href='#brands-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/brands
+            <br>
+            <small>Create a new brand</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_products </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all products related to brand</p>
+
+    </li>
+    
+    <li>
+      <strong>brand </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>Brand data</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Brand name</p>
+
+    </li>
+    
+    <li>
+      <strong>description </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Brand description</p>
+
+    </li>
+    
+    <li>
+      <strong>code </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Brand code</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="brands-update">
+      <a href='#brands'>Brands</a> / <a href='#brands-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PUT /api/brands/:id
+            <br>
+            <small>Update a brand</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_products </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all products related to brand</p>
+
+    </li>
+    
+    <li>
+      <strong>brand </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>Brand data</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Brand name</p>
+
+    </li>
+    
+    <li>
+      <strong>description </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Brand description</p>
+
+    </li>
+    
+    <li>
+      <strong>code </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Brand code</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="categories">
+      <a href='#categories'>Categories</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="categories-index">
+      <a href='#categories'>Categories</a> / <a href='#categories-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/categories
+            <br>
+            <small>Get categories list</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_products </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all products related to category</p>
+
+    </li>
+    
+    <li>
+      <strong>is_include_subcategories </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all subcategories related to category</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="categories-show">
+      <a href='#categories'>Categories</a> / <a href='#categories-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/categories/:id
+            <br>
+            <small>Get category</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_products </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all products related to category</p>
+
+    </li>
+    
+    <li>
+      <strong>is_include_subcategories </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all subcategories related to category</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="categories-destroy">
+      <a href='#categories'>Categories</a> / <a href='#categories-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/categories/:id
+            <br>
+            <small>Delete category</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+      </div>
+      <hr/>
+
+      <h3 id="categories-create">
+      <a href='#categories'>Categories</a> / <a href='#categories-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/categories
+            <br>
+            <small>Create a new category</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_products </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all products related to category</p>
+
+    </li>
+    
+    <li>
+      <strong>is_include_subcategories </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all subcategories related to category</p>
+
+    </li>
+    
+    <li>
+      <strong>category </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>category data</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>category name</p>
+
+    </li>
+    
+    <li>
+      <strong>description </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>category description</p>
+
+    </li>
+    
+    <li>
+      <strong>code </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>category code</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="categories-update">
+      <a href='#categories'>Categories</a> / <a href='#categories-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PUT /api/categories/:id
+            <br>
+            <small>Update a category</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_products </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all products related to category</p>
+
+    </li>
+    
+    <li>
+      <strong>is_include_subcategories </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all subcategories related to category</p>
+
+    </li>
+    
+    <li>
+      <strong>category </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>category data</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>category name</p>
+
+    </li>
+    
+    <li>
+      <strong>description </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>category description</p>
+
+    </li>
+    
+    <li>
+      <strong>code </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>category code</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="product_items">
+      <a href='#product_items'>Product items</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="product_items-index">
+      <a href='#product_items'>Product items</a> / <a href='#product_items-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/product_items
+            <br>
+            <small>Get product_items list</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+      </div>
+      <hr/>
+
+      <h3 id="product_items-show">
+      <a href='#product_items'>Product items</a> / <a href='#product_items-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/product_items/:id
+            <br>
+            <small>Get product_item</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+      </div>
+      <hr/>
+
+      <h3 id="product_items-destroy">
+      <a href='#product_items'>Product items</a> / <a href='#product_items-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/product_items/:id
+            <br>
+            <small>Delete product_item</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+      </div>
+      <hr/>
+
+      <h3 id="product_items-create">
+      <a href='#product_items'>Product items</a> / <a href='#product_items-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/product_items
+            <br>
+            <small>Create a new product_item</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>product_item </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>product_item data</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>product_item name</p>
+
+    </li>
+    
+    <li>
+      <strong>description </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>product_item description</p>
+
+    </li>
+    
+    <li>
+      <strong>product_id </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product id</p>
+
+    </li>
+    
+    <li>
+      <strong>price </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product Item price</p>
+
+    </li>
+    
+    <li>
+      <strong>size </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product Item size</p>
+
+    </li>
+    
+    <li>
+      <strong>color </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product Item color</p>
+
+    </li>
+    
+    <li>
+      <strong>available </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product Item availability</p>
+
+    </li>
+    
+    <li>
+      <strong>category_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Brand id</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="product_items-update">
+      <a href='#product_items'>Product items</a> / <a href='#product_items-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PUT /api/product_items/:id
+            <br>
+            <small>Update a product_item</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>product_item </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>product_item data</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>product_item name</p>
+
+    </li>
+    
+    <li>
+      <strong>description </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>product_item description</p>
+
+    </li>
+    
+    <li>
+      <strong>product_id </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product id</p>
+
+    </li>
+    
+    <li>
+      <strong>price </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product Item price</p>
+
+    </li>
+    
+    <li>
+      <strong>size </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product Item size</p>
+
+    </li>
+    
+    <li>
+      <strong>color </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product Item color</p>
+
+    </li>
+    
+    <li>
+      <strong>available </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product Item availability</p>
+
+    </li>
+    
+    <li>
+      <strong>category_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Brand id</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="products">
+      <a href='#products'>Products</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="products-index">
+      <a href='#products'>Products</a> / <a href='#products-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/products
+            <br>
+            <small>Get products list</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_items </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all product_items related to product</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="products-show">
+      <a href='#products'>Products</a> / <a href='#products-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/products/:id
+            <br>
+            <small>Get product</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_items </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all product_items related to product</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="products-destroy">
+      <a href='#products'>Products</a> / <a href='#products-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/products/:id
+            <br>
+            <small>Delete product</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+      </div>
+      <hr/>
+
+      <h3 id="products-create">
+      <a href='#products'>Products</a> / <a href='#products-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/products
+            <br>
+            <small>Create a new product</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_items </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all product_items related to product</p>
+
+    </li>
+    
+    <li>
+      <strong>product </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>product data</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>product name</p>
+
+    </li>
+    
+    <li>
+      <strong>description </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>product description</p>
+
+    </li>
+    
+    <li>
+      <strong>brand_id </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Brand id</p>
+
+    </li>
+    
+    <li>
+      <strong>expiration_date </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Date when product leave a market</p>
+
+    </li>
+    
+    <li>
+      <strong>beginning_date </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Date when product starts on market</p>
+
+    </li>
+    
+    <li>
+      <strong>available </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product availability</p>
+
+    </li>
+    
+    <li>
+      <strong>category_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Brand id</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="products-update">
+      <a href='#products'>Products</a> / <a href='#products-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PUT /api/products/:id
+            <br>
+            <small>Update a product</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>is_include_items </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be one of: <code>true</code>, <code>false</code>.</p>
+ ]
+      </small>
+      
+<p>Show all product_items related to product</p>
+
+    </li>
+    
+    <li>
+      <strong>product </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>product data</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>product name</p>
+
+    </li>
+    
+    <li>
+      <strong>description </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>product description</p>
+
+    </li>
+    
+    <li>
+      <strong>brand_id </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Brand id</p>
+
+    </li>
+    
+    <li>
+      <strong>expiration_date </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Date when product leave a market</p>
+
+    </li>
+    
+    <li>
+      <strong>beginning_date </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Date when product starts on market</p>
+
+    </li>
+    
+    <li>
+      <strong>available </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>Product availability</p>
+
+    </li>
+    
+    <li>
+      <strong>category_ids </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Brand id</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="users">
+      <a href='#users'>Users</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="users-index">
+      <a href='#users'>Users</a> / <a href='#users-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/profile
+            <br>
+            <small>Get user profile</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+      </div>
+      <hr/>
+
+      <h3 id="users-create">
+      <a href='#users'>Users</a> / <a href='#users-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/login
+            <br>
+            <small>Get Bearer token</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            400
+            Parameters missing
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            401
+            Please log in
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+            404
+            Requested record not found
+            <pre class="prettyprint lang-yaml"></pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>username </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>User login</p>
+
+    </li>
+    
+    <li>
+      <strong>password </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>User password</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>

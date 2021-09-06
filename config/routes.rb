@@ -3,6 +3,7 @@
 require 'routes_constraints'
 
 Rails.application.routes.draw do
+  apipie
   root 'status#static'
 
   namespace :status do

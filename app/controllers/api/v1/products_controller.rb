@@ -4,6 +4,8 @@ module Api
   module V1
     class ProductsController < Api::V1::BaseController
       include Api::V1::ProductsHelper
+      include Api::V1::ProductsDoc
+
       before_action :find_product, only: %i[destroy update show]
       before_action :check_brand, only: %i[create update]
 
