@@ -9,8 +9,8 @@ module Api::V1
         param :description, String, :desc => "product_item description"
         param :product_id, String, :desc => "Product id"
         param :price, String, :desc => "Product Item price"
-        param :size, String, :desc => "Product Item size"
-        param :color, String, :desc => "Product Item color"
+        param :size, ProductItem::SIZES, :desc => "Product Item size"
+        param :color, ProductItem::COLORS, :desc => "Product Item color"
         param :available, String, :desc => "Product Item availability"
         param :category_ids, Array, :desc => "Brand id"
       end
