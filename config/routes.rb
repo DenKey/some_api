@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'routes_constraints'
 
 Rails.application.routes.draw do
-  root "status#static"
+  root 'status#static'
 
   namespace :status do
     get :static
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    scope module: :v1, constraints: ApiVersionConstraint.new(version: "v1") do
+    scope module: :v1, constraints: ApiVersionConstraint.new(version: 'v1') do
       get 'product_items' => 'product_items#index'
       get 'product_items/:id' => 'product_items#show'
       post 'product_items' => 'product_items#create'

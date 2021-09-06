@@ -1,33 +1,39 @@
-class Api::V1::CategoriesController < Api::V1::BaseController
-  include Api::V1::CategoriesHelper
-  before_action :find_category, only: [:destroy, :update, :show]
-  before_action :check_parent_category, only: [:create, :update]
+# frozen_string_literal: true
 
-  def index
-    @categories = Category.all
+module Api
+  module V1
+    class CategoriesController < Api::V1::BaseController
+      include Api::V1::CategoriesHelper
+      before_action :find_category, only: %i[destroy update show]
+      before_action :check_parent_category, only: %i[create update]
 
-    render 'api/v1/categories/index.json.jbuilder', locals: category_get_params
-  end
+      def index
+        @categories = Category.all
 
-  def create
-    @category = Category.create!(category_params)
+        render 'api/v1/categories/index.json.jbuilder', locals: category_get_params
+      end
 
-    render_category
-  end
+      def create
+        @category = Category.create!(category_params)
 
-  def destroy
-    @category.destroy!
+        render_category
+      end
 
-    render json: true
-  end
+      def destroy
+        @category.destroy!
 
-  def update
-    @category.update!(category_params)
+        render json: true
+      end
 
-    render_category
-  end
+      def update
+        @category.update!(category_params)
 
-  def show
-    render_category
+        render_category
+      end
+
+      def show
+        render_category
+      end
+    end
   end
 end

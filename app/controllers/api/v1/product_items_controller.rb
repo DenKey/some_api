@@ -1,33 +1,39 @@
-class Api::V1::ProductItemsController < Api::V1::BaseController
-  include Api::V1::ProductItemsHelper
-  before_action :find_product_item, only: [:destroy, :update, :show]
-  before_action :check_product, only: [:create, :update]
+# frozen_string_literal: true
 
-  def index
-    @product_items = ProductItem.all
+module Api
+  module V1
+    class ProductItemsController < Api::V1::BaseController
+      include Api::V1::ProductItemsHelper
+      before_action :find_product_item, only: %i[destroy update show]
+      before_action :check_product, only: %i[create update]
 
-    render 'api/v1/product_items/index.json.jbuilder'
-  end
+      def index
+        @product_items = ProductItem.all
 
-  def create
-    @product_item = ProductItem.create!(product_item_params)
+        render 'api/v1/product_items/index.json.jbuilder'
+      end
 
-    render_product_item
-  end
+      def create
+        @product_item = ProductItem.create!(product_item_params)
 
-  def destroy
-    @product_item.destroy!
+        render_product_item
+      end
 
-    render json: true
-  end
+      def destroy
+        @product_item.destroy!
 
-  def update
-    @product_item.update!(product_item_params)
+        render json: true
+      end
 
-    render_product_item
-  end
+      def update
+        @product_item.update!(product_item_params)
 
-  def show
-    render_product_item
+        render_product_item
+      end
+
+      def show
+        render_product_item
+      end
+    end
   end
 end

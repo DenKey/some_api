@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.partial! 'category', category: @category
 if is_include_subcategories
   json.subcategories @category.subcategories do |subcategory|
@@ -9,4 +11,3 @@ if is_include_products
     json.partial! 'api/v1/products/product', product: product
   end
 end
-

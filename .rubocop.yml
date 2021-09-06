@@ -1,0 +1,35 @@
+AllCops:
+  Exclude:
+    - "bin/*"
+    - "config/**/*"
+    - "doc/snippets.rb"
+    - "node_modules/**/*"
+    - "db/schema.rb"
+  ExtraDetails: true
+  TargetRubyVersion: 2.7
+  NewCops: disable
+  SuggestExtensions: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+
+Style/GuardClause:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 25
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/ModuleLength:
+  Max: 250
+
+Metrics/ClassLength:
+  Max: 250
+
+Style/FormatStringToken:
+  Enabled: false

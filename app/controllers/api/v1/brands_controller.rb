@@ -1,32 +1,38 @@
-class Api::V1::BrandsController < Api::V1::BaseController
-  include Api::V1::BrandHelper
-  before_action :find_brand, only: [:show, :update, :destroy]
+# frozen_string_literal: true
 
-  def index
-    @brands = Brand.all
+module Api
+  module V1
+    class BrandsController < Api::V1::BaseController
+      include Api::V1::BrandHelper
+      before_action :find_brand, only: %i[show update destroy]
 
-    render 'api/v1/brands/index.json.jbuilder', locals: brand_get_params
-  end
+      def index
+        @brands = Brand.all
 
-  def create
-    @brand = Brand.create!(brand_params)
+        render 'api/v1/brands/index.json.jbuilder', locals: brand_get_params
+      end
 
-    render_brand
-  end
+      def create
+        @brand = Brand.create!(brand_params)
 
-  def destroy
-    @brand.destroy!
+        render_brand
+      end
 
-    render json: true
-  end
+      def destroy
+        @brand.destroy!
 
-  def update
-    @brand.update!(brand_params)
+        render json: true
+      end
 
-    render_brand
-  end
+      def update
+        @brand.update!(brand_params)
 
-  def show
-    render_brand
+        render_brand
+      end
+
+      def show
+        render_brand
+      end
+    end
   end
 end

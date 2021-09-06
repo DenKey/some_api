@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Product < ApplicationRecord
   belongs_to :brand
   has_and_belongs_to_many :categories, dependent: :destroy
@@ -31,9 +33,7 @@ class Product < ApplicationRecord
   private
 
   def expiration_date_cannot_be_in_the_past
-    if expiration_date.present? && expiration_date < Date.today
-      errors.add(:expiration_date, "can't be in the past")
-    end
+    errors.add(:expiration_date, "can't be in the past") if expiration_date.present? && expiration_date < Date.today
   end
 
   def beginning_date_cannot_be_earlier_or_same_as_expiration_date

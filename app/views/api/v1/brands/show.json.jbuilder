@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.partial! 'brand', brand: @brand
 if is_include_products
   json.products @brand.products do |product|
