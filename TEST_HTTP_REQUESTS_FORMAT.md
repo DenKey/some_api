@@ -23,7 +23,6 @@ api: v1
 ```
 GET http://localhost:3000/api/brands/:id
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
@@ -37,7 +36,6 @@ api: v1
 ```
 GET http://localhost:3000/api/brands?is_include_products=true
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
@@ -74,7 +72,6 @@ api: v1
 ```
 GET http://localhost:3000/api/products/?is_include_items=true
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
@@ -88,7 +85,6 @@ api: v1
 ```
 GET http://localhost:3000/api/products/:id
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
@@ -130,21 +126,18 @@ api: v1
 ```
 GET http://localhost:3000/api/categories/:id?is_include_subcategories=true&is_include_products=true
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
 ```
 GET http://localhost:3000/api/categories/:id
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
 ```
 GET http://localhost:3000/api/categories?is_include_subcategories=true&is_include_products=true
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
@@ -158,6 +151,7 @@ api: v1
 ```
 POST http://localhost:3000/api/categories
 Content-Type: application/json
+Authorization: Bearer TOKEN
 api: v1
 
 {
@@ -173,6 +167,7 @@ api: v1
 ```
 PUT http://localhost:3000/api/categories/:id
 Content-Type: application/json
+Authorization: Bearer TOKEN
 api: v1
 
 {
@@ -188,14 +183,12 @@ api: v1
 ```
 GET http://localhost:3000/api/product_items
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
 ```
 GET http://localhost:3000/api/product_items/:id
 cache-control: no-cache
-Authorization: Bearer TOKEN
 api: v1
 ```
 
@@ -209,6 +202,7 @@ api: v1
 ```
 POST http://localhost:3000/api/product_items
 Content-Type: application/json
+Authorization: Bearer TOKEN
 api: v1
 
 {
@@ -227,6 +221,7 @@ api: v1
 ```
 PUT http://localhost:3000/api/product_items/:id
 Content-Type: application/json
+Authorization: Bearer TOKEN
 api: v1
 
 {
