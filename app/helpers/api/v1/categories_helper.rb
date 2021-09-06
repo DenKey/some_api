@@ -14,4 +14,15 @@ module Api::V1::CategoriesHelper
   def find_category
     @category = Category.find(params[:id])
   end
+
+  def category_get_params
+    {
+      is_include_subcategories: params[:is_include_subcategories],
+      is_include_products: params[:is_include_products]
+    }
+  end
+
+  def render_category
+    render'api/v1/categories/show.json.jbuilder', locals: category_get_params
+  end
 end

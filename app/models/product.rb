@@ -12,6 +12,22 @@ class Product < ApplicationRecord
   validate :expiration_date_cannot_be_in_the_past,
            :beginning_date_cannot_be_earlier_or_same_as_expiration_date
 
+  def category_ids=(ids)
+    if categories.empty?
+      categories << Category.where(id: ids)
+    else
+      delete_ids = category_ids - ids
+      add_ids = ids - (category_ids & ids)
+
+      categories.delete(*delete_ids) if delete_ids.present?
+      categories << Category.where(id: add_ids) if add_ids.present?
+    end
+  end
+
+  def category_ids
+    categories.map(&:id)
+  end
+
   private
 
   def expiration_date_cannot_be_in_the_past

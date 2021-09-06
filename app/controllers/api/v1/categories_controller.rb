@@ -6,13 +6,13 @@ class Api::V1::CategoriesController < Api::V1::BaseController
   def index
     @categories = Category.all
 
-    render 'api/v1/categories/index.json.jbuilder'
+    render 'api/v1/categories/index.json.jbuilder', locals: category_get_params
   end
 
   def create
     @category = Category.create!(category_params)
 
-    render'api/v1/categories/show.json.jbuilder'
+    render_category
   end
 
   def destroy
@@ -24,10 +24,10 @@ class Api::V1::CategoriesController < Api::V1::BaseController
   def update
     @category.update!(category_params)
 
-    render'api/v1/categories/show.json.jbuilder'
+    render_category
   end
 
   def show
-    render'api/v1/categories/show.json.jbuilder'
+    render_category
   end
 end

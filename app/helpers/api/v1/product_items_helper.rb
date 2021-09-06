@@ -15,4 +15,8 @@ module Api::V1::ProductItemsHelper
   def product_item_params
     params.require(:product_item).permit(:name, :description, :price, :size, :color, :available, :product_id)
   end
+
+  def render_product_item
+    render 'api/v1/product_items/show.json.jbuilder'
+  end
 end

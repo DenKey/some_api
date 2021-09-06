@@ -12,7 +12,7 @@ class Api::V1::ProductItemsController < Api::V1::BaseController
   def create
     @product_item = ProductItem.create!(product_item_params)
 
-    render 'api/v1/product_items/show.json.jbuilder'
+    render_product_item
   end
 
   def destroy
@@ -24,10 +24,10 @@ class Api::V1::ProductItemsController < Api::V1::BaseController
   def update
     @product_item.update!(product_item_params)
 
-    render 'api/v1/product_items/show.json.jbuilder'
+    render_product_item
   end
 
   def show
-    render'api/v1/product_items/show.json.jbuilder'
+    render_product_item
   end
 end
